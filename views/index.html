@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desbloqueador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="mx-auto mt-5 w-max text-center text-3xl font-bold">
+      YouTube Unblocker
+    </div>
+    <div class="mt-5 flex justify-center gap-2">
+      <input
+        id="text"
+        type="text"
+        placeholder="URL del Video"
+        class="border bg-white p-2 outline-none"
+      />
+      <div onclick="unblock()"  class="cursor-pointer bg-blue-500 p-2 text-lg text-white">
+        Unblock Video
+      </div>
+    </div>
+    <video id="videoFrame" class="lg:8/12 mx-auto mt-5 h-96 w-9/12 border" src="/"></video>
+  </body>
+
+
+  <script>
+      function unblock(){
+          let url = document.querySelector("#text").value;
+          let iframe = document.querySelector("#videoFrame");
+          console.log(`[LOGS] -> VideoURL: ${url}`)
+            iframe.src = `/unblock?video=${url}`
+          
+      }
+  </script>
+</html>
